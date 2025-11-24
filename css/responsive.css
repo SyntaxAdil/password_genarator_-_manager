@@ -1,0 +1,229 @@
+/* Responsive Styles for Ultimate Password Generator */
+
+/* Extra small devices (phones, <576px) */
+@media (max-width: 575px) {
+  .password-generator-main-section {
+    grid-template-columns: 1fr;
+    width: 95%;
+    margin: 20px auto;
+    gap: 15px;
+  }
+
+  .pass-container,
+  .pass-saved-container {
+    padding: 15px;
+  }
+
+  .title h1 {
+    font-size: 18px;
+  }
+
+  .pass-display-box input {
+    font-size: 16px;
+  }
+
+  #pass-length-value {
+    font-size: 0.8rem;
+  }
+
+  #pass-search-input {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .pass-btn-box button {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  #pass-save-modal-section .pass-save-modal {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .passfor-form-group h4 {
+    font-size: 14px;
+  }
+
+  #delete-modal-section .delete-modal {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #error-popup {
+    padding: 3rem;
+    font-size: 0.7rem;
+  }
+  #error-popup i:first-child {
+    font-size: 2.7rem;
+    background: var(--primary);
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--danger);
+  }
+  .pass-strength-box .d-flex {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pass-strength-box h4 {
+    line-height: 1.7;
+  }
+  #left,
+  #right {
+    width: 100%;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .password-generator-main-section {
+    grid-template-columns: 1fr;
+    width: 90%;
+    margin: 30px auto;
+  }
+
+  .pass-container,
+  .pass-saved-container {
+    padding: 20px;
+  }
+
+  .title h1 {
+    font-size: 20px;
+  }
+
+  .pass-display-box input {
+    font-size: 17px;
+  }
+
+  .pass-btn-box button {
+    font-size: 15px;
+    padding: 11px 0;
+  }
+
+  #pass-save-modal-section .pass-save-modal,
+  #delete-modal-section .delete-modal {
+    width: 85%;
+  }
+  .pass-strength-box .d-flex {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pass-strength-box h4 {
+    line-height: 1.7;
+  }
+  #left,
+  #right {
+    width: 100%;
+  }
+  #error-popup i:first-child {
+    font-size: 2.7rem;
+    background: var(--primary);
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--danger);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .password-generator-main-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .pass-container,
+  .pass-saved-container {
+    padding: 20px;
+  }
+
+  .title h1 {
+    font-size: 21px;
+  }
+
+  .pass-display-box input {
+    font-size: 18px;
+  }
+
+  .pass-btn-box button {
+    font-size: 15px;
+    padding: 12px 0;
+  }
+
+  #pass-save-modal-section .pass-save-modal,
+  #delete-modal-section .delete-modal {
+    width: 400px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .password-generator-main-section {
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    gap: 25px;
+  }
+
+  .pass-container,
+  .pass-saved-container {
+    padding: 25px;
+  }
+
+  .title h1 {
+    font-size: 22px;
+  }
+
+  .pass-display-box input {
+    font-size: 18px;
+  }
+
+  .pass-btn-box button {
+    font-size: 16px;
+    padding: 12px 0;
+  }
+
+  #pass-save-modal-section .pass-save-modal,
+  #delete-modal-section .delete-modal {
+    width: 380px;
+  }
+}
+
+/* General adjustments for all screens */
+.pass-card h4 {
+  font-size: 16px;
+}
+
+.pass-for-display {
+  font-size: 14px;
+}
+
+.pass-view-box {
+  flex-direction: row;
+  font-size: 14px;
+}
+
+.pass-toggle {
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+}

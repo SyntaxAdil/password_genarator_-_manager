@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Vault || Ultimate Password Generator & Manager</title>
+    <!-- link font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- link css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <!-- hero logo section -->
+    <section class="hero-logo">
+      <h1 class="hero-title">PASSWORD <span>Vault</span></h1>
+    </section>
+    <section class="password-generator-main-section">
+      <!-- pass genarator  -->
+      <section class="pass-container">
+        <!-- title -->
+        <div class="title">
+          <i class="fa-solid fa-lock"></i>
+          <h1>Password Generator</h1>
+        </div>
+        <!-- password display -->
+        <div class="pass-display-box">
+          <input
+            type="text"
+            id="pass-display"
+            readonly
+            placeholder="Genarated Password.. "
+          />
+          <i class="fa-solid fa-copy" id="pass-display-copy-btn"></i>
+        </div>
+
+        <!-- password length -->
+        <div class="pass-length-box">
+          <div class="d-flex pass-length-display">
+            <h4>Password Length</h4>
+            <p id="pass-length-value">06</p>
+          </div>
+          <input
+            type="range"
+            name="pass-length"
+            id="pass-length"
+            max="20"
+            min="06"
+            value="06"
+          />
+          <p>
+            <span class="pass-length-indicator">
+              <i id="pass-length-weak"></i>
+              <i id="pass-length-medium"></i>
+              <i id="pass-length-strong"></i>
+            </span>
+          </p>
+        </div>
+
+        <!-- password strength -->
+        <div class="pass-strength-box">
+          <h4>
+            <i
+              class="fa-regular fa-lightbulb"
+              style="margin-right: 2px; color: var(--primary)"
+            ></i
+            >Select at least two for better password strength
+          </h4>
+
+          <div class="d-flex">
+            <div id="left">
+              <label for="upperCase-pass">
+                <input
+                  type="checkbox"
+                  name="upperCase-pass"
+                  id="upperCase-pass"
+                />
+                Include UpperCase (A-Z)
+              </label>
+              <label for="lowerCase-pass">
+                <input
+                  type="checkbox"
+                  name="lowerCase-pass"
+                  id="lowerCase-pass"
+                />
+                Include LowerCase (a-z)
+              </label>
+            </div>
+            <div id="right">
+              <label for="numeric-pass">
+                <input type="checkbox" name="numeric-pass" id="numeric-pass" />
+                Include Numbers (0-9)
+              </label>
+              <label for="symbol-pass">
+                <input type="checkbox" name="symbol-pass" id="symbol-pass" />
+                Include Symbols (~ - ?)
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!--  Buttons -->
+        <div class="pass-btn-box">
+          <button id="pass-genarate-btn">
+            <i class="fa-solid fa-bolt"></i> Genarate
+          </button>
+          <button id="pass-reset-btn">
+            <i class="fa-solid fa-arrows-rotate"></i> Reset
+          </button>
+          <button id="pass-save-btn">
+            <i class="fa-solid fa-save"></i> Save
+          </button>
+        </div>
+      </section>
+
+      <!-- password save container -->
+      <section class="pass-saved-container">
+        <!-- title -->
+        <div class="d-flex">
+          <div class="title">
+            <i class="fa-solid fa-sd-card"></i>
+            <h1>Saved Passwords</h1>
+          </div>
+          <div class="total-pass-box">
+            <p>Total : <span id="pass-total">00</span></p>
+          </div>
+        </div>
+
+        <!-- saved password search -->
+        <div id="save-pass-search">
+          <input
+            type="search"
+            id="pass-search-input"
+            placeholder="Search your password.."
+            autocomplete="off"
+          />
+          <button id="pass-search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <!-- saved password -->
+        <div id="saved-pass-box-with-noMatch-mssg">
+          <div id="pass-save-box">
+            <!-- password cards -->
+          </div>
+          <span id="noSearchMessage">No search found</span>
+        </div>
+      </section>
+    </section>
+
+    <!-- Modal Parts -->
+
+    <!-- For save password -->
+
+    <section id="pass-save-modal-section">
+      <div id="saved-popup">
+        <i class="fa-solid fa-check"></i>
+        <h2>Password Stored</h2>
+      </div>
+      <div class="pass-save-modal">
+        <div class="title">
+          <i class="fa-solid fa-cloud"></i>
+          <h1>Save your password</h1>
+        </div>
+        <div class="passfor-form-group">
+          <h4>Your genarated password is:</h4>
+          <input type="text" readonly id="generated-pass-for-save" />
+        </div>
+
+        <div class="passfor-form-group">
+          <label for="pass-for-name"><h4>Password For:</h4> </label>
+          <input
+            type="text"
+            id="pass-for-name"
+            placeholder="eg: facebook"
+            required
+            autocomplete="off"
+          />
+        </div>
+        <div class="passfor-form-group">
+          <label for="pass-for-name-link"
+            ><h4>Site Link (Optional):</h4>
+          </label>
+          <input
+            type="text"
+            id="pass-for-name-link"
+            placeholder="eg: https://www.facebook.com"
+            autocomplete="off"
+          />
+        </div>
+        <div class="passfor-form-group">
+          <div class="condition-box">
+            <i class="fa-solid fa-exclamation"></i>
+
+            <p>
+              <b>Conditions:</b> This app has no login system; your data is
+              stored only in your device’s local storage. If you understand and
+              agree, check the box to save your password.
+            </p>
+          </div>
+          <label for="agree-to-save"
+            ><input type="checkbox" id="agree-to-save" />I agrred to the terms
+            and conditions.
+          </label>
+        </div>
+        <div class="passfor-form-group">
+          <button id="pass-for-save-btn" type="button" role="button">
+            <i class="fa-solid fa-save"></i> Save
+          </button>
+        </div>
+
+        <span id="pass-modal-dlt-btn"><i class="fa-solid fa-close"></i></span>
+      </div>
+    </section>
+
+    <!-- for delete password -->
+    <section id="delete-modal-section">
+      <div class="delete-modal">
+        <div class="title">
+          <i class="fa-solid fa-trash"></i>
+          <h1>Delete Password</h1>
+        </div>
+
+        <p class="delete-msg">Are you sure you want to delete this password?</p>
+
+        <div class="delete-btn-group">
+          <button id="confirm-delete-btn" class="yes-btn">
+            <i class="fa-solid fa-check"></i> Yes, delete
+          </button>
+
+          <button id="cancel-delete-btn" class="no-btn">
+            <i class="fa-solid fa-xmark"></i> Cancel
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- error modal -->
+    <section id="error-modal">
+      <div id="error-popup">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <h2 id="error-mssg"></h2>
+
+        <i class="fa-solid fa-close" id="close-error-pop"></i>
+      </div>
+    </section>
+
+    <!-- copyrigth -->
+    <p id="copyRigth">&copy; 2025 <a href="https://github.com/SyntaxAdil" target="_blank">Abdur Rahman Adil</a>. All rights reserved.</p>
+
+    <!-- link script js -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
